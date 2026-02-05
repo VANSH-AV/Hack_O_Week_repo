@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vansh Gaikwad | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0f0f1a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Background Glow Animation */
+    .glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #7f00ff, transparent 70%);
+      top: -100px;
+      left: -150px;
+      filter: blur(80px);
+      animation: floatGlow 6s infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes floatGlow {
+      from { transform: translateY(0px); }
+      to { transform: translateY(80px); }
+    }
+
+    /* HERO SECTION */
+    header {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 65px;
+      font-weight: 700;
+      animation: fadeDown 1.2s ease;
+    }
+
+    header span {
+      color: #a855f7;
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 20px;
+      max-width: 700px;
+      opacity: 0.9;
+      animation: fadeUp 1.5s ease;
+    }
+
+    /* Typing Effect */
+    .typing {
+      margin-top: 15px;
+      font-size: 22px;
+      color: #ffe600;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(30) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 380px; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* BUTTON */
+    header a {
+      margin-top: 40px;
+      padding: 14px 35px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #7f00ff, #e100ff);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
+      box-shadow: 0px 0px 20px #a855f7;
+      animation: fadeUp 2s ease;
+    }
+
+    header a:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 40px #ffe600;
+    }
+
+    /* SECTION STYLE */
+    section {
+      padding: 90px 12%;
+    }
+
+    section h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      width: 90px;
+      height: 5px;
+      background: #a855f7;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      border-radius: 10px;
+    }
+
+    /* ABOUT */
+    .about p {
+      font-size: 18px;
+      line-height: 1.9;
+      margin-top: 25px;
+      opacity: 0.85;
+    }
+
+    /* SKILLS */
+    .skills-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      padding: 12px 22px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    .skill:hover {
+      background: #a855f7;
+      transform: translateY(-8px);
+      box-shadow: 0px 0px 20px #a855f7;
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      padding: 25px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.03);
+      border-left: 5px solid #ffe600;
+      box-shadow: 0px 0px 25px rgba(255,255,0,0.4);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #ffe600;
+    }
+
+    /* CONTACT */
+    .contact-links a {
+      display: inline-block;
+      margin: 12px 15px 0 0;
+      padding: 14px 28px;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #7f00ff, #e100ff);
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .contact-links a:hover {
+      transform: scale(1.1);
+      background: #ffe600;
+      color: black;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: black;
+      margin-top: 40px;
+      opacity: 0.8;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Glow Effect -->
+  <div class="glow"></div>
+
+  <!-- HERO -->
+  <header>
+    <h1>Hi, I'm <span>Vansh Gaikwad</span> 👋</h1>
+    <p>B.Tech CSE Student | Symbiosis Institute of Technology, Nagpur</p>
+
+    <div class="typing">
+      Future Software Developer 🚀
+    </div>
+
+    <a href="#about">Explore My Portfolio ↓</a>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I am <b>Vansh Gaikwad</b>, a passionate Computer Science Engineering student at
+      <b>Symbiosis Institute of Technology, Nagpur</b>.  
+      I enjoy coding, learning Data Structures, and building real-world projects.
+      My goal is to become an excellent software developer and innovate with technology.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-box">
+      <div class="skill">C Programming</div>
+      <div class="skill">Data Structures & Algorithms</div>
+      <div class="skill">Sorting & Searching</div>
+      <div class="skill">HTML + CSS</div>
+      <div class="skill">Problem Solving</div>
+      <div class="skill">Web Development Basics</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Projects</h2>
+
+    <div class="projects">
+      <div class="card">
+        <h3>🚦 Traffic Light Monitoring System</h3>
+        <p>An Arduino-based system for smart traffic signal monitoring and automation.</p>
+      </div>
+
+      <div class="card">
+        <h3>📚 Student Record Management</h3>
+        <p>A C program using structures to manage and display student academic data.</p>
+      </div>
+
+      <div class="card">
+        <h3>⚡ Sorting & Searching Algorithms</h3>
+        <p>Implemented Bubble, Merge, Quick Sort and Binary Search for DSA practice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>Contact Me</h2>
+    <p>Let’s connect and build something amazing together 🌍</p>
+
+    <div class="contact-links">
+      <a href="mailto:vanshgaikwad68@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/vansh-gaikwad-996b94376/" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/VANSH-AV" target="_blank">🐙 GitHub</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Vansh Gaikwad | Portfolio Website ✨</p>
+  </footer>
+
+</body>
+</html>
