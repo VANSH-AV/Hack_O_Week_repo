@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Quiz</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#121212;
+    margin:0;
+    padding:0;
+    color:#f1f1f1;
+}
+
+.container{
+    width:750px;
+    margin:auto;
+    background:#1e1e1e;
+    padding:40px;
+    margin-top:40px;
+    margin-bottom:40px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.6);
+}
+
+h1{
+    text-align:center;
+    color:#00bcd4;
+    margin-bottom:30px;
+}
+
+.instructions{
+    background:#2a2a2a;
+    padding:20px;
+    border-left:5px solid #00bcd4;
+    margin-bottom:30px;
+}
+
+.instructions ul{
+    line-height:1.8;
+}
+
+.info{
+    margin-bottom:30px;
+}
+
+.info label{
+    font-weight:bold;
+}
+
+.info input{
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    margin-bottom:15px;
+    border-radius:5px;
+    border:1px solid #555;
+    background:#2a2a2a;
+    color:white;
+}
+
+.question{
+    margin-bottom:30px;
+    padding:18px;
+    background:#2a2a2a;
+    border-left:4px solid #00bcd4;
+    line-height:1.8;
+}
+
+.marks{
+    font-size:14px;
+    color:#bbbbbb;
+    margin-bottom:8px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#00bcd4;
+    color:white;
+    font-size:16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0097a7;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    font-size:14px;
+    color:#888;
+}
+
+.correct{
+    color:#00e676;
+    font-weight:bold;
+}
+
+.wrong{
+    color:#ff5252;
+    font-weight:bold;
+}
+
+#result{
+    margin-top:30px;
+    background:#2a2a2a;
+    padding:20px;
+    border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Quiz</h1>
+
+<div class="instructions">
+<h3>Quiz Instructions</h3>
+<ul>
+<li>Total Questions: <b>10</b></li>
+<li>Each Question carries <b>2 marks</b></li>
+<li>Total Marks: <b>20</b></li>
+<li>Select only <b>one option</b> for each question.</li>
+<li>Fill in your name and roll number before submitting.</li>
+</ul>
+</div>
+
+<form id="quizForm">
+
+<div class="info">
+<label>Student Name</label>
+<input type="text" placeholder="Enter your name">
+
+<label>Roll Number</label>
+<input type="text" placeholder="Enter your roll number">
+</div>
+
+<div class="question">
+<p><b>1. What does CPU stand for?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q1" value="A"> Central Processing Unit<br>
+<input type="radio" name="q1" value="B"> Computer Personal Unit<br>
+<input type="radio" name="q1" value="C"> Central Program Unit<br>
+<input type="radio" name="q1" value="D"> Control Processing Unit
+</div>
+
+<div class="question">
+<p><b>2. Which language is used to create web pages?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q2" value="A"> HTML<br>
+<input type="radio" name="q2" value="B"> Python<br>
+<input type="radio" name="q2" value="C"> Java<br>
+<input type="radio" name="q2" value="D"> C++
+</div>
+
+<div class="question">
+<p><b>3. Which HTML tag is used for hyperlinks?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q3" value="A"> &lt;link&gt;<br>
+<input type="radio" name="q3" value="B"> &lt;a&gt;<br>
+<input type="radio" name="q3" value="C"> &lt;href&gt;<br>
+<input type="radio" name="q3" value="D"> &lt;url&gt;
+</div>
+
+<div class="question">
+<p><b>4. Which company originally developed Java?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q4" value="A"> Microsoft<br>
+<input type="radio" name="q4" value="B"> Sun Microsystems<br>
+<input type="radio" name="q4" value="C"> Apple<br>
+<input type="radio" name="q4" value="D"> IBM
+</div>
+
+<div class="question">
+<p><b>5. Which tag is used to insert an image in HTML?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q5" value="A"> &lt;image&gt;<br>
+<input type="radio" name="q5" value="B"> &lt;img&gt;<br>
+<input type="radio" name="q5" value="C"> &lt;pic&gt;<br>
+<input type="radio" name="q5" value="D"> &lt;src&gt;
+</div>
+
+<div class="question">
+<p><b>6. Which HTML tag is used to create a paragraph?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q6" value="A"> &lt;para&gt;<br>
+<input type="radio" name="q6" value="B"> &lt;p&gt;<br>
+<input type="radio" name="q6" value="C"> &lt;text&gt;<br>
+<input type="radio" name="q6" value="D"> &lt;pg&gt;
+</div>
+
+<div class="question">
+<p><b>7. Which CSS property is used to change text color?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q7" value="A"> font-color<br>
+<input type="radio" name="q7" value="B"> text-color<br>
+<input type="radio" name="q7" value="C"> color<br>
+<input type="radio" name="q7" value="D"> font-style
+</div>
+
+<div class="question">
+<p><b>8. Which tag creates a numbered list in HTML?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q8" value="A"> &lt;ul&gt;<br>
+<input type="radio" name="q8" value="B"> &lt;ol&gt;<br>
+<input type="radio" name="q8" value="C"> &lt;list&gt;<br>
+<input type="radio" name="q8" value="D"> &lt;li&gt;
+</div>
+
+<div class="question">
+<p><b>9. Which HTML tag is used for the largest heading?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q9" value="A"> &lt;heading&gt;<br>
+<input type="radio" name="q9" value="B"> &lt;h1&gt;<br>
+<input type="radio" name="q9" value="C"> &lt;h6&gt;<br>
+<input type="radio" name="q9" value="D"> &lt;head&gt;
+</div>
+
+<div class="question">
+<p><b>10. Which CSS property controls the background color?</b></p>
+<p class="marks">(Marks: 2)</p>
+<input type="radio" name="q10" value="A"> bg-color<br>
+<input type="radio" name="q10" value="B"> background-color<br>
+<input type="radio" name="q10" value="C"> color-background<br>
+<input type="radio" name="q10" value="D"> bgcolor
+</div>
+
+<button type="button" onclick="checkQuiz()">Submit Quiz</button>
+
+</form>
+
+<div id="result"></div>
+
+<div class="footer">
+Online Quiz Page | Computer Science
+</div>
+
+</div>
+
+<script>
+
+function checkQuiz(){
+
+let answers={
+q1:"A",
+q2:"A",
+q3:"B",
+q4:"B",
+q5:"B",
+q6:"B",
+q7:"C",
+q8:"B",
+q9:"B",
+q10:"B"
+};
+
+let score=0;
+let output="<h2>Quiz Result</h2>";
+
+for(let q in answers){
+
+let selected=document.querySelector('input[name="'+q+'"]:checked');
+
+if(selected){
+
+if(selected.value===answers[q]){
+score+=2;
+output+="<p class='correct'>"+q.toUpperCase()+" : Correct</p>";
+}
+else{
+output+="<p class='wrong'>"+q.toUpperCase()+" : Incorrect (Correct Answer: "+answers[q]+")</p>";
+}
+
+}
+else{
+output+="<p class='wrong'>"+q.toUpperCase()+" : Not Answered (Correct Answer: "+answers[q]+")</p>";
+}
+
+}
+
+output+="<h3>Your Score: "+score+" / 20</h3>";
+
+document.getElementById("result").innerHTML=output;
+
+}
+
+</script>
+
+</body>
+</html>
+```
